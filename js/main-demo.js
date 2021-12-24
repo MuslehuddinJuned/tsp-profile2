@@ -39,4 +39,5 @@ $(window).on('load', function(){
 
 
     $('#anim-type').append(options);
+    $('html').data('animation', parseInt(30, 10));
 });

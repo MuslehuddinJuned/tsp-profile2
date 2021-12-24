@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" data-random-animation="false" data-animation="18">
+<html lang="en" data-random-animation="false" data-animation="11">
     
-<!-- Mirrored from watson-vcard.netlify.app/index-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jan 2021 15:39:10 GMT -->
+<!-- Mirrored from watson-vcard.netlify.app/index-dark-slider.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Dec 2021 14:41:45 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 
@@ -32,14 +32,14 @@
         <!--Favicons-->
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122650090-3"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-122650090-3');
-        </script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122650090-3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-122650090-3');
+		</script>
 
     </head>
 
@@ -130,7 +130,7 @@
                             </ul>
                             <!--Copyright Text-->
                             <div class="copy">
-                                <p>2018 &copy; Cosmos-Themes.<br>All Right Reserved.</p>
+                                <p>2021 &copy; Cosmos-Themes.<br>All Right Reserved.</p>
                             </div>
                         </div>
 
@@ -144,7 +144,18 @@
             <div id="main" class="site-main">
 
                 <!--Banner Section Start-->
-                <section id="home" class="banner-section pt-page" style="background-image: url('img/background/home-bg.jpg')">
+                <section id="home" class="banner-section pt-page">
+
+                    <div class="banner-slider">
+                        <div id="slides">
+                            <div class="slides-container">
+                                <!--Slide 1-->
+                                <img src="img/slider/img-1.jpg" alt="">
+                                <!--Slide 2-->
+                                <img src="img/slider/img-2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="banner-content">
                         <!--Banner Text-->
@@ -1043,14 +1054,22 @@
         <!--Plugins JS-->
         <script src="js/plugins.min.js"></script>
         <!--Google Map Api-->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxjdAabKFsk7CHhYq3VNKkwRyonhLHWDo"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
         <!--Site Main JS-->
         <script src="js/main.js"></script>
 
         <script src="js/main-demo.js"></script>
 
+        <script>
+            //Super Slider
+            $('#slides').superslides({
+                animation: 'fade',
+                play: 3000
+            });
+        </script>
+
     </body>
 
-<!-- Mirrored from watson-vcard.netlify.app/index-dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 31 Jan 2021 15:39:10 GMT -->
+<!-- Mirrored from watson-vcard.netlify.app/index-dark-slider.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Dec 2021 14:42:25 GMT -->
 </html>
 

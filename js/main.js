@@ -53,9 +53,6 @@ $(window).on('load', function() {
     /*======== Blogs Masonry Setup ========*/
     $('.blogs-masonry').isotope({ layoutMode: 'moduloColumns' });
 
-    $('#video-container video').attr('playsinline', '');
-    $('#video-container video').attr('controls', '');
-
 });
 
 
@@ -69,6 +66,15 @@ $(document).ready(function() {
     $('.pt-page').each(function() {
         var $id = '#' + $(this).attr('id');
         new SimpleBar($($id)[0]);
+    });
+
+    $(document).on('mouseup', function (e) {
+        var headerContainer = $('.header-main');
+
+        if (!headerContainer.is(e.target) && headerContainer.has(e.target).length === 0 && $(e.target).closest('.header-toggle').length === 0) {
+            $('.header-content').removeClass('on');
+        }
+
     });
 
     /*======== Fitty Setup ========*/
@@ -87,7 +93,9 @@ $(document).ready(function() {
 
     /*======== Mobile Toggle Click Setup ========*/
     $('.header-toggle').on('click', function() {
-        $('header .header-content').toggleClass('on');
+
+        $('.header-content').toggleClass('on');
+
     });
 
     /*========Clients OwlCarousel Setup========*/
@@ -139,10 +147,25 @@ $(document).ready(function() {
 
     /*======== Skills Progress Animation ========*/
     if($('.skills').length > 0) {
+
         var el = new SimpleBar($('#resume')[0]).getScrollElement();
 
+        //When scrolled to Progress
         $(el).on('scroll', function() {
+            animateProgress();
+        });
 
+        //When Resume Section have page-active on page load
+        if($('#resume').hasClass('page-active')) {
+            animateProgress();
+        }
+
+        //When Resume Link is clicked
+        $('a[href="#resume"]').on('click', function(){
+            animateProgress();
+        });
+
+        function animateProgress() {
             $('.progress .progress-bar').each(function() {
                 var bottom_object = $(this).offset().top + $(this).outerHeight();
                 var bottom_window = $(window).scrollTop() + $(window).height();
@@ -165,8 +188,7 @@ $(document).ready(function() {
                     });
                 }
             });
-
-        });
+        }
     }
 
     /*======== Portfolio Image Link Setup ========*/
@@ -221,8 +243,6 @@ function ajaxPortfolioSetup($ajaxLink, $ajaxContainer) {
 
         $ajaxContainer.addClass('on');
         $.ajax({
-            cache: false,
-            headers: {"cache-control": "no-cache"},
             url: link,
             beforeSend: function() {
                 $ajaxContainer.find('.ajax-loader').show();
@@ -327,12 +347,17 @@ function contactFormSetup() {
                     cf_email: email,
                     cf_message: message
                 },
+                dataType: "json",
                 success: function(data) {
-                    $("#contact-form .input__field").val("");
-                    showAlertBox(data.status, data.responseText);
+                    console.log(data);
+                    showAlertBox(data.status, data.message);
+
+                    if(data.status === 200) {
+                        $("#contact-form .input__field").val("");
+                    }
                 },
                 error: function(data) {
-                    showAlertBox(data.status, data.responseText);
+                    showAlertBox(data.status, data.message);
                 }
             });
         }
@@ -351,6 +376,6 @@ function showAlertBox(response, message) {
         $alertBox.addClass('alert-danger').html(message);
         $alContainer.html($alertBox);
     }
-    $alContainer.fadeIn(300).delay(2000).fadeOut(400);
+    $alContainer.fadeIn(300).delay(4000).fadeOut(400);
 }
 

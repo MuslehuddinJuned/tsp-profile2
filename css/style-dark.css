@@ -1067,12 +1067,12 @@ header .header-mobile .header-toggle i {
     width: 100px;
     height: 100px;
     margin: auto;
-    opacity: .7;
+     opacity: .7;
     -webkit-transition: opacity .4s ease;
     -o-transition: opacity .4s ease;
     transition: opacity .4s ease;
-    -webkit-filter: invert(100%);
-    filter: invert(100%);
+    /*-webkit-filter: invert(100%);
+    filter: invert(100%); */
 }
 
 .clients .client-logo img:hover {

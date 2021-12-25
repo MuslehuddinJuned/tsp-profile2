@@ -1490,7 +1490,7 @@ header .header-mobile .header-toggle i {
 .blog-section .blog-item .blog-content .cat {
     margin-bottom: 7px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 1.5px;
 }
@@ -1721,7 +1721,7 @@ header .header-mobile .header-toggle i {
 .blog-page .blog-heading .cat {
     margin-bottom: 7px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 1.5px;
 }

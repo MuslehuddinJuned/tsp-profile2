@@ -40,9 +40,13 @@
 
 .btn-main {
   border-color: #6ac045 !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* opacity: 0.5; */
   color: #6ac045; }
   .btn-main:after {
     background-color: #6ac045; }
+  .btn-main:hover {
+    background-color: #6ac045 !important; }
 
 .services .service-item .icon {
   color: #6ac045 !important; }
